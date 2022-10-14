@@ -1,5 +1,3 @@
-# vanilla-camunda-template
+# c7-multi-instance
 
-This is a template repository to create a plain vanilla CAMUNDA Platform EE Spring Boot project.
-
-This is the best generic starting point!  - Change my mind :)
+Camunda 7 example for parallel execution of multi-instance model elements

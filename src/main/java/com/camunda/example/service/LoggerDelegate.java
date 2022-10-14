@@ -27,23 +27,26 @@ import java.util.Map;
 @Component("logger")
 public class LoggerDelegate implements JavaDelegate {
 
-  public void execute(DelegateExecution exec) {
+  public void execute(DelegateExecution exec) throws InterruptedException {
 
-    log.info("\n\n LoggerDelegate invoked by processDefinitionId: {}, activityId: {}, activityName: '{}'," +
-            " processInstanceId: {}, businessKey: {}, executionId: {}, modelName: {}, elementId: {} \n",
-        exec.getProcessDefinitionId(),
-        exec.getCurrentActivityId(),
-        exec.getCurrentActivityName().replaceAll("\n", " "),
-        exec.getProcessInstanceId(),
-        exec.getProcessBusinessKey(),
-        exec.getId(),
-        exec.getBpmnModelInstance().getModel().getModelName(),
-        exec.getBpmnModelElementInstance().getId()
-    );
+//    log.info("\n\n LoggerDelegate invoked by processDefinitionId: {}, activityId: {}, activityName: '{}'," +
+//            " processInstanceId: {}, businessKey: {}, executionId: {}, modelName: {}, elementId: {} \n",
+//        exec.getProcessDefinitionId(),
+//        exec.getCurrentActivityId(),
+//        exec.getCurrentActivityName().replaceAll("\n", " "),
+//        exec.getProcessInstanceId(),
+//        exec.getProcessBusinessKey(),
+//        exec.getId(),
+//        exec.getBpmnModelInstance().getModel().getModelName(),
+//        exec.getBpmnModelElementInstance().getId()
+//    );
 
-    log.info("--- Variables ---");
-    Map<String, Object> variables = exec.getVariables();
-    for (Map.Entry<String, Object> entry : variables.entrySet())
-      log.info(entry.getKey() + " : " + entry.getValue());
+//    log.info("--- Variables ---");
+//    Map<String, Object> variables = exec.getVariables();
+//    for (Map.Entry<String, Object> entry : variables.entrySet())
+//      log.info(entry.getKey() + " : " + entry.getValue());
+
+    log.info("Item {}", exec.getVariable("item"));
+    Thread.sleep(2000);
   }
 }
