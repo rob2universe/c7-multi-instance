@@ -9,7 +9,7 @@
       <bpmn:incoming>SequenceFlow_16gzt2m</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_16gzt2m" sourceRef="RunGroovyScript" targetRef="EndEvent_0x6ir2l" />
-    <bpmn:serviceTask id="RunGroovyScript" name="Log something" camunda:asyncBefore="true" camunda:exclusive="false" camunda:delegateExpression="${logger}">
+    <bpmn:serviceTask id="RunGroovyScript" name="Log something" camunda:delegateExpression="${logger}">
       <bpmn:extensionElements />
       <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_16gzt2m</bpmn:outgoing>
